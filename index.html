@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            .calculator{
+                width: 300px;
+            }
+            #display{
+                font-size:1.5em;
+            }
+            .buttons{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .button{
+                width:25%;
+                height:60px;
+            }            
+            #clear{
+                background-color: grey;
+            }
+
+        </style>
+        <body>
+            <div class="calculator">
+                <input type="text" id="display">
+                <div class="buttons">
+                    <button class="button" id="clear" onclick="cleardisplay()">C</button>
+                    <button class="button" id="one" onclick="addtodisplay('1')">1</button>
+                    <button class="button" id="two" onclick="addtodisplay('2')">2</button>
+                    <button class="button" id="three" onclick="addtodisplay('3')">3</button>
+                    <button class="button" id="four" onclick="addtodisplay('4')">4</button>
+                    <button class="button" id="five" onclick="addtodisplay('5')">5</button>
+                    <button class="button" id="six" onclick="addtodisplay('6')">6</button>
+                    <button class="button" id="seven" onclick="addtodisplay('7')">7</button>
+                    <button class="button" id="eight" onclick="addtodisplay('8')">8</button>
+                    <button class="button" id="nine" onclick="addtodisplay('9')">9</button>
+                    <button class="button" id="zero" onclick="addtodisplay('0')">0</button>
+                    <button class="button" id="add" onclick="addtodisplay('+')">+</button>
+                    <button class="button" id="subtract" onclick="addtodisplay('-')">-</button>
+                    <button class="button" id="multiply" onclick="addtodisplay('*')">*</button>
+                    <button class="button" id="divide" onclick="addtodisplay('/')">/</button>
+                    <button class="button" id="equals" onclick="calculate()">=</button>
+                    <button class="button" id="decimal" onclick="addtodisplay('.')">.</button>
+                    <button class="button" id="backspace" onclick="backspace()">CE</button>
+
+                </div>
+            </div>
+        </body>
+    </head>
+    <script>
+        function cleardisplay(value){
+            display.value="";
+        }
+        function calculate(value){
+            display.value=eval(display.value);
+        }
+        function backspace(value){
+            display.value= display.value.slice(0, -1);
+        }
+        function addtodisplay(value){
+            display.value += value;
+        }
+    </script>
+</html>
